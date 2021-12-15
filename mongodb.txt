@@ -1,0 +1,23 @@
+//connect from shell
+mongo --host 127.0.0.1 --port 27017 -u root -p pass --authenticationDatabase admin
+
+//показать базы
+show dbs
+
+//выбрать базу
+use mydb
+
+//показать коллекции
+show collections
+
+//показать обьекты базы
+db. (tab tab)
+
+//выбрать все из коллекции
+db.people.find()
+
+//красиво вывести выборку
+db.people.find({name:"Афанасий"}).pretty()
+
+//обновить вложенную запись 
+db.people.findAndModify({ query: {"people.children":3,name:"Афанасий"} , update: { $set:{"people.$.children":NumberLong("4")}} })
