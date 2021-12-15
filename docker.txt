@@ -1,0 +1,11 @@
+//rebuild containers
+docker-compose down -v && docker-compose up -d
+
+//list container
+docker ps -a
+
+//ip address
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' containername
+
+//enter container shell
+docker exec -it containername /bin/bash
