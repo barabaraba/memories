@@ -1,0 +1,5 @@
+//search substring in files
+grep -rI -e 'afephone' --exclude=\*.{c,h,mib,log,svg} / 2> /dev/null
+-I skip binary
+-r recursive
+
