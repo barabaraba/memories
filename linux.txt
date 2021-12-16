@@ -14,7 +14,7 @@ fail2ban-client set sshd unbanip 192.168.1.1
 //vgs
 vgs
 lvs
-lvextend -L+50G /dev/mapper/portal--vg-home
-lvextend -L+45G /dev/mapper/portal--vg-home
-resize2fs /dev/mapper/portal--vg-home
+lvextend -L+50G /dev/mapper/vg
+lvextend -L+45G /dev/mapper/vg
+resize2fs /dev/mapper/vg
 df -h
