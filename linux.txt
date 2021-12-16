@@ -11,10 +11,9 @@ cmatrix -ba
 //unban fail2ban
 fail2ban-client set sshd unbanip 192.168.1.1
 
-//vgs
+//увеличить раздел
 vgs
 lvs
 lvextend -L+50G /dev/mapper/vg
-lvextend -L+45G /dev/mapper/vg
 resize2fs /dev/mapper/vg
 df -h
