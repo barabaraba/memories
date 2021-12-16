@@ -3,3 +3,7 @@ grep -rI -e 'afephone' --exclude=\*.{c,h,mib,log,svg} / 2> /dev/null
 -I skip binary
 -r recursive
 
+//matrix
+cmatrix -ba
+-bold
+-asynchronous
