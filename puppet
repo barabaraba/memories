@@ -1,0 +1,4 @@
+//update agent
+puppet agent -t
+
+
