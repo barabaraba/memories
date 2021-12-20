@@ -1,4 +1,30 @@
 //update agent
 puppet agent -t
 
+//server paths
+/etc/puppetlabs/code/environments/production/modules/
+
+//manifests
+service { "ndtask":
+  ensure => running,
+}
+
+file { "/var/tmp/install-vmware.sh":
+  ensure => file,
+  mode => '0755',
+  source => 'puppet:///modules/vmwareclient/install-vmware.sh'
+}
+
+//use facts in manifests
+if $facts['vmwareversion']=='2111' {
+  ...
+}
+
+//manifest structure
+class name{
+  service { "sname":
+    ensure => running,
+  }
+}
+
 
