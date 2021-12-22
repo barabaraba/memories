@@ -1,2 +1,26 @@
+//connect
 $dblink=mysqli_connect("localhost","login","pass") or die("error");
+
+//selectdb
 mysqli_select_db($dblink,"mydb");
+
+//handle error
+if(mysqli_error($dblink))
+  echo mysqli_error($dblink);
+
+//query
+$res=mysqli_query($dblink,"select * from history where doc_id=$id");
+
+//fetch loop
+while($row=mysqli_fetch_array($res)){
+  $resarray[]=$row;
+}	
+
+//close
+mysqli_close($link);
+
+//json
+$resarray=[];
+$resarray[]=$row;
+echo json_encode($resarray);
+header('Content-Type: application/json');
