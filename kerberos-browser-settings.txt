@@ -13,3 +13,6 @@ AuthNegotiateDelegateAllowlist *.mydomain1.ru,*.mydomain2.ru
 //На старых браузерах до 2020 года, называются по другому (BLM)
 AuthServerWhitelist *.mydomain1.ru,*.mydomain2.ru
 AuthNegotiateDelegateWhitelist *.mydomain1.ru,*.mydomain2.ru
+
+//в яндексе есть настроечный файл
+https://yandex.ru/support/browser-corporate/deployment/deployment.html
