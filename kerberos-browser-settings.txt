@@ -1,0 +1,15 @@
+//Для работы SSO AD, в реестре должны быть
+HKLM\SOFTWARE\Policies\YandexBrowser
+HKLM\SOFTWARE\Policies\Google\Chrome
+HKLM\SOFTWARE\Policies\Microsoft\Edge
+
+//по идее вот этого достаточно
+AuthServerAllowlist *.mydomain1.ru,*.mydomain2.ru
+//можно добавить
+AuthNegotiateDelegateAllowlist *.mydomain1.ru,*.mydomain2.ru
+
+//в файрфокс по другому
+
+//На старых браузерах до 2020 года, называются по другому (BLM)
+AuthServerWhitelist *.mydomain1.ru,*.mydomain2.ru
+AuthNegotiateDelegateWhitelist *.mydomain1.ru,*.mydomain2.ru
