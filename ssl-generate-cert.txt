@@ -1,0 +1,12 @@
+//generate new self signed certs
+openssl req -x509 -newkey rsa:4096 -keyout web.key -out web.crt -sha256 -days 3650
+
+//remote pass, otherwise it will request password each restart
+openssl rsa -in /etc/pki/tls/private/web.key -out /etc/pki/tls/private/web2.key
+mv /etc/pki/tls/private/web2.key /etc/pki/tls/private/web.key
+
+//apache conf ssl
+SSLCertificateFile /etc/pki/tls/cert/web.crt
+SSLCertificateKeyFile /etc/pki/tls/private/web.key
+
+
