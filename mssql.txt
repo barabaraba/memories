@@ -1,0 +1,2 @@
+--describe table
+exec sp_columns tablename
