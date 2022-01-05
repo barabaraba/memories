@@ -1,0 +1,13 @@
+https://stackoverflow.com/questions/40917372/udp-forwarding-with-nginx
+So this did seem to be the solution (in my note above).
+
+If using my example from above, you want this to look like:
+
+ stream {
+     server {
+         listen 11016 udp;
+         proxy_pass juniper_close_stream_backend;
+         proxy_responses 0;
+     }
+ }
+This tells nginx not to expect a response, which it shouldn't need from UDP. I don't know why their examples don't show this when discussing DNS, which can be entirely UDP driven.
