@@ -6,3 +6,13 @@ select * into nonexistedtable from existedtable
 
 --substring
 select substring(field,start,count)
+
+--bulk insert
+IF (OBJECT_ID('CSV_Export') IS NOT NULL) DROP TABLE dbo.CSV_Export;
+CREATE TABLE CSV_Export (
+	DateReport VARCHAR(15),
+	CountView INT
+)
+BULK INSERT dbo.CSV_Export
+FROM 'D:\Report.csv'--file must be on the server
+WITH (fieldterminator = ';', rowterminator = '\n');
