@@ -3,3 +3,6 @@ exec sp_columns tablename
 
 --create table from table
 select * into nonexistedtable from existedtable 
+
+--substring
+select substring(field,start,count)
