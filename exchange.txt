@@ -1,0 +1,5 @@
+//show mailbox folder permitions
+Get-MailboxFolderPermission -Identity ivanov-ii:\Календарь
+
+//add editor or viewer to other users folder
+Get-MailboxFolderPermission -Identity ivanov-ii:\Календарь
