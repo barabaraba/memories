@@ -1,0 +1,2 @@
+//check listener status on server
+lsnrctl status
