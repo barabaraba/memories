@@ -1,5 +1,8 @@
-//static route
+//add static route
 route -p ADD 192.168.5.1 MASK 255.255.255.255 192.168.1.1
+
+//delete route
+route delete 192.168.35.0
 
 //print route table
 route print
