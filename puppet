@@ -27,4 +27,6 @@ class name{
   }
 }
 
+//foreman reset password
+foreman-rake permissions:reset username=admin password=pass
 
