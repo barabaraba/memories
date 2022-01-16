@@ -1,0 +1,5 @@
+//get windows updates list
+get-hotfix
+
+//channel output to csv
+some-command | Export-CSV -Path C:\output.csv
