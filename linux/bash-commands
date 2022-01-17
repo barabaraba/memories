@@ -17,3 +17,12 @@ lvs
 lvextend -L+50G /dev/mapper/vg
 resize2fs /dev/mapper/vg
 df -h
+
+//скачать deb пакет
+apt download package.name.deb
+
+//посмотреть зависимости
+apt-cache rdepends nginx
+
+//посмотреть инфу
+apt show nginx
