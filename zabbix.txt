@@ -1,7 +1,7 @@
 //график оповещений только в не рабочее время (настраивается у пользователя)
 1-5,00:00-08:00;1-5,13:00-14:00;1-5,17:00-24:00;6-7,00:00-24:00
 
-//при установке 5.4 база не обновилась, ошибка в логе
+//при установке 5.4 база не обновилась, ошибка в логе https://github.com/microsoft/msphpsql/issues/1112
 [Z3005] query failed: [1118] Row size too large. The maximum row size for the used table type, not counting BLOBs, is 8126. This includes storage overhead, check the manual. You have to change some columns to T EXT or BLOBs [alter table `config` add `default_lang` varchar(5) default 'en_GB' not null]
 //FIX
 ALTER TABLE config ROW_FORMAT=DYNAMIC;
