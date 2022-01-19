@@ -1,0 +1,18 @@
+
+apt update
+apt upgrade
+apt dist-upgrade
+
+nano /etc/apt/sources.list 
+  deb http://mirror.yandex.ru/debian buster main
+  deb-src http://mirror.yandex.ru/debian buster main
+
+  deb http://mirror.yandex.ru/debian buster-updates main
+  deb-src http://mirror.yandex.ru/debian buster-updates main
+
+  deb http://security.debian.org/ buster/updates main
+  deb-src http://security.debian.org/ buster/updates main
+
+apt update
+apt upgrade
+apt dist-upgrade или apt full-upgrade(помоему этот удаляет нужные пакеты и не ставит замену)
