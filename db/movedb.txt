@@ -1,0 +1,8 @@
+ALTER DATABASE TestDB SET OFFLINE
+//copy mdf ldf to another drive
+//change path
+ALTER DATABASE TestDB 
+MODIFY FILE (NAME = TestDB, FILENAME = 'C:\MSSQL\UserDBData\TestDB.mdf')
+ALTER DATABASE TestDB 
+MODIFY FILE (NAME = TestDB_log, FILENAME = 'C:\MSSQL\UserDBLog\TestDB_log.ldf')
+ALTER DATABASE TestDB SET ONLINE
