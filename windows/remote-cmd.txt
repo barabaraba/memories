@@ -1,0 +1,4 @@
+C:\PSTools\PsExec.exe \\hostname cmd
+
+//uptime
+net stats workstation
