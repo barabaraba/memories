@@ -1,0 +1,14 @@
+su - postgres
+export PGDATA=/var/lib/pgpro/ent-11/data >> .bash_profile
+export PATH=/opt/pgpro/ent-11/bin:$PATH >> .bash_profile
+exit
+
+su - postgres
+psql
+ALTER USER postgres WITH ENCRYPTED PASSWORD 'pass';
+
+//host password conf
+nano /var/lib/pg/pg11/data/pg_hba.conf
+
+//listen conf
+nano /var/lib/pg/pg11/data/postgresql.conf
