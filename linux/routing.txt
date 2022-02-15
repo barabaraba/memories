@@ -1,0 +1,6 @@
+//runtime (temporary)
+ip route add 192.168.1.0/24 via 192.168.1.1 dev eth0
+
+//persistant (centos) append file
+nano /etc/sysconfig/network-scripts/route-eth0
+192.168.1.0/24 via 192.168.1.1 dev eth0
