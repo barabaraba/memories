@@ -1,0 +1,11 @@
+header('Content-Type: application/json; charset=utf-8');
+
+$rows = array();
+
+//db stuff..
+
+while($row=somedb_fetch_array($result)){	
+  $rows[] = $row;
+}
+
+print json_encode($rows);
