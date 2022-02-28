@@ -1,0 +1,4 @@
+#freebsd commands
+nano /usr/local/etc/smb4.conf
+/usr/local/etc/rc.d/samba_server configtest
+/usr/local/etc/rc.d/samba_server restart
