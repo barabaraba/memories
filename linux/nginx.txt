@@ -13,3 +13,12 @@ nginx -t
 
 #reload config
 service nginx reload
+
+#deny by ip
+location /admin {
+  allow 192.168.1.5;
+  deny all;
+  
+  #if getting 404 do this
+  try_files $uri $uri/ /index.php?$query_string;
+}
