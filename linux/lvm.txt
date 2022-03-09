@@ -1,0 +1,6 @@
+pvdisplay
+lvdisplay
+vgdisplay
+lvextend -L+10G /dev/mapper/yakutsk-content
+resize2fs /dev/mapper/content or xfs_growfs /dev/mapper/content
+cat /etc/fstab
