@@ -1,0 +1,2 @@
+//CMD.exe
+certutil -hashfile C:\path\to\file.txt MD5
