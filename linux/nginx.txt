@@ -29,3 +29,8 @@ location /api {
 	auth_basic_user_file /etc/apache2/.htpasswd; 
 }
 htpasswd -c /etc/apache2/.htpasswd user1
+
+#limit connections in http section
+limit_conn_zone $binary_remote_addr zone=perip:10m;
+limit_req_zone $binary_remote_addr zone=dynamic:10m rate=15r/s;
+limit_req zone=dynamic burst=30 nodelay;
