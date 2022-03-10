@@ -22,3 +22,10 @@ location /admin {
   #if getting 404 do this
   try_files $uri $uri/ /index.php?$query_string;
 }
+
+#basic auth
+location /api {
+	auth_basic           “Administrator’s Area”;
+	auth_basic_user_file /etc/apache2/.htpasswd; 
+}
+htpasswd -c /etc/apache2/.htpasswd user1
