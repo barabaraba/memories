@@ -1,0 +1,46 @@
+IF OBJECT_ID('dbo.who', 'U') IS NOT NULL 
+BEGIN
+  DROP TABLE dbo.who;
+END; 
+
+CREATE TABLE who
+    (
+      SPID INT
+      ,Status VARCHAR(1000) NULL
+      ,LOGIN SYSNAME NULL
+      ,HostName SYSNAME NULL
+      ,BlkBy SYSNAME NULL
+      ,DBName SYSNAME NULL
+      ,Command VARCHAR(1000) NULL
+      ,CPUTime INT NULL
+      ,DiskIO INT NULL
+      ,LastBatch VARCHAR(1000) NULL
+      ,ProgramName VARCHAR(1000) NULL
+      ,SPID2 INT
+      , RequestID INT NULL --comment out for SQL 2000 databases
+      , InsertedDate datetime DEFAULT GETDATE()	 
+    );
+
+--This insert can be added to a job that runs periodically.
+USE [master]
+GO
+INSERT  INTO who
+    (
+        SPID
+        ,Status                                                                                                                                                                                                                                                           
+        ,LOGIN                                                                                                                            
+        ,HostName                                                                                                                         
+        ,BlkBy                                                                                                                            
+        ,DBName                                                                                                                           
+        ,Command                                                                                                                                                                                                                                                          
+        ,CPUTime     
+        ,DiskIO      
+        ,LastBatch                                                                                                                                                                                                                                                        
+        ,ProgramName                                                                                                                                                                                                                                                      
+        ,SPID2       
+        ,RequestID
+    )
+EXECUTE sp_who2;
+
+SELECT  *
+FROM    who;
