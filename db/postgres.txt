@@ -12,3 +12,6 @@ nano /var/lib/pg/pg11/data/pg_hba.conf
 
 //listen conf
 nano /var/lib/pg/pg11/data/postgresql.conf
+
+//import dump
+psql -U user -h dbhostname -d basename -f C:\dumpfile.dmp
