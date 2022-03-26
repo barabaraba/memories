@@ -1,0 +1,16 @@
+--For a renamed computer that hosts a default instance of SQL Server, run the following procedures:
+EXEC sp_dropserver '<old_name>';  
+GO  
+EXEC sp_addserver '<new_name>', local;  
+GO  
+--Restart the instance of SQL Server.
+
+--For a renamed computer that hosts a named instance of SQL Server, run the following procedures:
+EXEC sp_dropserver '<old_name\instancename>';  
+GO  
+EXEC sp_addserver '<new_name\instancename>', local;  
+GO  
+--Restart the instance of SQL Server.
+
+--Verify
+SELECT @@SERVERNAME AS 'Server Name';  
