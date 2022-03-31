@@ -1,0 +1,5 @@
+#How to unban
+#In Fail2ban version(before v0.8.8)
+fail2ban-client get ssh actionunban 192.168.1.5
+#In Fail2ban version v0.8.8 or later
+fail2ban-client set ssh unbanip 192.168.1.5
