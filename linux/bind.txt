@@ -1,0 +1,2 @@
+//check config freebsd
+named-checkconf /usr/local/etc/namedb/named.conf
