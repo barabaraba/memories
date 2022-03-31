@@ -14,7 +14,7 @@ nano /var/lib/pg/pg11/data/pg_hba.conf
 nano /var/lib/pg/pg11/data/postgresql.conf
 
 //backup
-pg_dump -Fc -Z1 -v -f /bak/bak.dmp 2>/bak/bak.log
+pg_dump -U user -Fc -Z1 -v -f /bak/bak.dmp basename 2>/bak/bak.log
 
 //import dump
 psql -U user -h dbhostname -d basename -f C:\dumpfile.dmp
