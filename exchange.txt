@@ -2,7 +2,7 @@
 Get-MailboxFolderPermission -Identity ivanov-ii:\Календарь
 
 //add editor or viewer to other users folder
-Get-MailboxFolderPermission -Identity ivanov-ii:\Календарь
+Add-MailboxFolderPermission -Identity Ivanovii:\Календарь -User petrovvv -AccessRights Reviewer //или Editor
 
 //change user foto
 Set-UserPhoto "ivanov-ii" -PictureData ([System.IO.File]::ReadAllBytes("C:\foto\ivanov.jpg"))
