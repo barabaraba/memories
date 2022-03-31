@@ -17,4 +17,7 @@ nano /var/lib/pg/pg11/data/postgresql.conf
 pg_dump -U user -Fc -Z1 -v -f /bak/bak.dmp basename 2>/bak/bak.log
 
 //import dump
+//if text format
 psql -U user -h dbhostname -d basename -f C:\dumpfile.dmp
+//if tar or catalog format
+pg_restore ..
