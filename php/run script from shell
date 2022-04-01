@@ -1,0 +1,2 @@
+/usr/bin/php -f /path/to/file.php
+/usr/bin/php -r 'phpinfo();'
