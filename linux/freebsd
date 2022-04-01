@@ -1,0 +1,2 @@
+#add user to group
+pw usermod tom -G ftpusers
