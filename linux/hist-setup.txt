@@ -1,0 +1,5 @@
+#~/.bashrc
+export HISTSIZE=5000
+export HISTFILESIZE=5000
+export HISTCONTROL=ignorespace
+PROMPT_COMMAND='history -a' или PROMPT_COMMAND='$PROMPT_COMMAND; history -a' если $PROMPT_COMMAND уже есть
