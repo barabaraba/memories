@@ -1,0 +1,4 @@
+pam_tally --user=joe --reset
+
+#or comment in /etc/pam.d/sshd
+require auth pam_tally.so onerr = fail deny = 3
