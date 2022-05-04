@@ -1,0 +1,2 @@
+#удалить строки начинающиеся с #
+sed '/^#/ d' < inputFile.txt > outputFile.txt
