@@ -1,0 +1,11 @@
+#add space on virtual disk
+#reboot freebsd, enter single user mode
+gpart show da0
+#if corrupted (after vm disk grow)
+gpart recover da0
+#if swap between partition, N - index of swap partition
+gpart delete -i N da0
+#resize !!! WARNING !!! - s = full size of partition after grow, not that you want to add!!!
+gpart resize -i N -s 450G -a 4k da0
+#grow file system
+growfs /dev/da0pN
