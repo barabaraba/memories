@@ -1,0 +1,15 @@
+#install
+https://go.dev/doc/install
+
+#download
+wget https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
+ 
+#untar
+tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz
+
+#path
+nano /root/.bashrc
+export PATH=$PATH:/usr/local/go/bin
+
+#check
+go version
