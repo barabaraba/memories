@@ -9,3 +9,5 @@ Connection-Data-Environment variables
   LC_ALL en_US.UTF-8 [Add]
 
 Save
+
+source [[ https://winreviewer.com/russkie-bukvy-v-ssh-i-putty-146-rabochij-sposob/ ]]
