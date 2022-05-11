@@ -1,0 +1,11 @@
+Window-Appearance-Font Settings-Change
+  Cyrillic
+  
+Window-Translation
+  UTF-8
+  Font has XWindows encoding
+  
+Connection-Data-Environment variables
+  LC_ALL en_US.UTF-8 [Add]
+
+Save
