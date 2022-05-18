@@ -1,0 +1,9 @@
+санкции обсуждения
+	https://www.yaplakal.com/forum3/st/25/topic2402946.html
+	https://yandex.ru/search/?text=%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9+%D0%B4%D0%B8%D1%81%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D0%B8%D0%B2+debian+%D1%81%D0%B0%D0%BD%D0%BA%D1%86%D0%B8%D0%B8+%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D1%8B%D0%B9&lr=74&clid=2278637&win=489
+	
+node-ipc 10.1.1 10.1.2
+	https://xakep.ru/2022/03/17/node-ipc/
+		
+хороший список
+	https://docs.google.com/spreadsheets/d/1H3xPB4PgWeFcHjZ7NOPtrcya_Ua4jUolWm-7z9-jSpQ/htmlview?pru=AAABf7_vYTI*qR5NJC8FKVD1q3hq4ickMQ#
