@@ -4,7 +4,7 @@ $rows = array();
 
 //db stuff..
 
-while($row=somedb_fetch_array($result)){	
+while($row=mysql_fetch_array($result)){	
   $rows[] = $row;
 }
 
