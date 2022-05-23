@@ -1,3 +1,4 @@
+#good article https://theducks.org/2009/11/expanding-lvm-partitions-in-vmware-on-the-fly/
 #expand or add virtual disk
 #if expand
 echo 1 > /sys/class/block/sdb/device/rescan
