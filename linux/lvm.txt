@@ -1,3 +1,12 @@
+#expand or add virtual disk
+#if expand
+echo 1 > /sys/class/block/sdb/device/rescan
+#if add ( host0,host1,host2 )
+echo "- - -" > /sys/class/scsi_host/host0/scan
+
+
+
+
 pvdisplay
 lvdisplay
 vgdisplay
