@@ -4,12 +4,20 @@ echo 1 > /sys/class/block/sdb/device/rescan
 #if add ( host0,host1,host2 )
 echo "- - -" > /sys/class/scsi_host/host0/scan
 
+fdisk -l
+lsblk
 
+#grow pv
+pvresize /dev/sdb
+#append partition 10G
+lvextend -L+10G /dev/mapper/var
+#resize filesystem
+resize2fs /dev/mapper/var
 
 
 pvdisplay
 lvdisplay
 vgdisplay
-lvextend -L+10G /dev/mapper/yakutsk-content
+lvextend -L+10G /dev/mapper/content
 resize2fs /dev/mapper/content or xfs_growfs /dev/mapper/content
 cat /etc/fstab
