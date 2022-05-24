@@ -1,0 +1,3 @@
+#https://simonecarletti.com/blog/2016/08/redirect-domain-http-https-www-apache/
+RewriteCond %{HTTP_HOST} ^www.example.com [NC]
+RewriteRule ^(.*)$ http://example.com/$1 [L,R=301]
