@@ -1,0 +1,115 @@
+## First rule - delete all
+-D
+
+## Increase the buffers to survive stress events.
+## Make this bigger for busy systems
+-b 8192
+
+## This determine how long to wait in burst of events
+--backlog_wait_time 0
+
+## Set failure mode to syslog
+-f 1
+
+# Наблюдение за конфигурационными файлами
+-w /etc/audit/auditd.conf -p wa
+-w /etc/audit/audit.rules -p wa
+-w /etc/libaudit.conf -p wa
+-w /etc/default/auditd -p wa
+
+# Наблюдение за журнальными файлами
+-w /var/log/audit/
+-w /var/log/audit/audit.log
+
+# Задания cron
+-w /etc/cron.allow -p wa
+-w /etc/cron.deny -p wa
+-w /etc/cron.d/ -p wa
+-w /etc/cron.daily/ -p wa
+-w /etc/cron.hourly/ -p wa
+-w /etc/cron.monthly/ -p wa
+-w /etc/cron.weekly/ -p wa
+-w /etc/crontab -p wa
+-w /var/spool/cron/root
+
+# Файлы паролей и групп
+-w /etc/group -p wa
+-w /etc/passwd -p wa
+-w /etc/shadow
+
+# Конфигурационные и журнальные файлы входа в систему
+-w /etc/login.defs -p wa
+-w /etc/securetty
+-w /var/log/faillog
+-w /var/log/lastlog
+
+# Список и имена хостов
+-w /etc/hosts -p wa
+
+# Стартовые скрипты демонов
+-w /etc/init.d/
+-w /etc/init.d/auditd -p wa
+
+# Пути поиска библиотек
+-w /etc/ld.so.conf.d
+-w /etc/ld.so.conf -p wa
+
+# Настройки времени
+-w /etc/localtime -p wa
+
+# Системные переменные
+-w /etc/sysctl.conf -p wa
+
+# Правила загрузки модулей
+-w /etc/modprobe.d/
+
+# Модули системы PAM
+-w /etc/pam.d/
+
+# Настройки сервера SSH
+-w /etc/ssh/sshd_config
+
+
+# Audit Copy, Move, Delete & Create file commands
+-a exit,always -F arch=b64 -S execve -F path=/bin/cp -k Copy
+-a exit,always -F arch=b64 -S execve -F path=/bin/mv -k Move_Rename
+-a exit,always -F arch=b64 -S execve -F path=/bin/rm -k Delete
+-a exit,always -F arch=b64 -S execve -F path=/bin/vi -k Create_Edit_View_File
+-a exit,always -F arch=b64 -S execve -F path=/bin/mkdir -k MakeDir
+-a exit,always -F arch=b64 -S execve -F path=/bin/rmdir -k RemoveDir
+
+# Audit shutdown & Reboot command
+-a exit,always -F arch=b64 -S execve -F path=/sbin/reboot -k Reboot
+-a exit,always -F arch=b64 -S execve -F path=/sbin/init -k Reboot
+-a exit,always -F arch=b64 -S execve -F path=/sbin/poweroff -k Reboot
+-a exit,always -F arch=b64 -S execve -F path=/sbin/shutdown -k Reboot
+
+
+# Изменение прав доступа к файлам
+#-a entry,always -S chmod -S fchmod -S chown -S chown32 -S fchown -S fchown32 -S lchown -S lchown32
+
+# Создание, открытие или изменение размеров файлов
+#-a entry,always -S creat -S open -S truncate -S truncate64 -S ftruncate -S ftruncate64
+
+# Создание и удаление каталогов
+-a entry,always -S mkdir -S rmdir
+
+# Удаление или создание ссылок
+-a entry,always -S unlink -S rename -S link -S symlink
+
+# Изменение расширенных атрибутов файлов
+#-a entry,always -S setxattr
+#-a entry,always -S lsetxattr
+#-a entry,always -S fsetxattr
+#-a entry,always -S removexattr
+#-a entry,always -S lremovexattr
+#-a entry,always -S fremovexattr
+
+# Создание файлов устройств
+#-a entry,always -S mknod
+
+# Монтирование файловых систем
+#-a entry,always -S mount -S umount -S umount2
+
+# Использование системного вызова ptrace для отладки процессов
+#-a entry,always -S ptrace
