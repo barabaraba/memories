@@ -1,0 +1,5 @@
+nano /etc/pam.d/common-session-noninteractive 
+#before session required               pam_unix.so add
+session          [success=1 default=ignore] pam_succeed_if.so service in cron quiet use_uid
+#restart
+systemctl restart cron
