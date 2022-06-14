@@ -1,0 +1,3 @@
+--After migrate base from 2008 to 2017 wrong dates 2022-12-31 is writing 2022-31-12 with error
+--before insert do
+set dateformat ymd;
