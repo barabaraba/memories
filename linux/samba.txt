@@ -1,0 +1,7 @@
+#включить smb2 вместо smb1, smb1 не работает в виндоус 10
+/etc/samba/smb.conf
+[global]
+min protocol=SMB2
+max protocol=SMB2
+server min protocol=SMB2
+server max protocol=SMB2
