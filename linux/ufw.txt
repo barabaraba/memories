@@ -1,0 +1,5 @@
+apt install ufw
+ufw status verbose
+ufw allow 192.168.1.0/24 to any port 22
+ufw allow port 21
+ufw enable
