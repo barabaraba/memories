@@ -1,3 +1,52 @@
 --After migrate base from 2008 to 2017 wrong dates 2022-12-31 is writing 2022-31-12 with error
 --before insert do
 set dateformat ymd;
+
+
+--Have something to do with language settings during installation, I chose russian, previous 2008 was english
+--to change language to english
+--WARNING! you have to change it for logins too
+
+EXEC sp_configure 'default language', 0 ;
+GO
+RECONFIGURE ;
+GO
+
+| LANGID |        ALIAS        |
+|--------|---------------------|
+|    0   | English             |
+|    1   | German              |
+|    2   | French              |
+|    3   | Japanese            |
+|    4   | Danish              |
+|    5   | Spanish             |
+|    6   | Italian             |
+|    7   | Dutch               |
+|    8   | Norwegian           |
+|    9   | Portuguese          |
+|   10   | Finnish             |
+|   11   | Swedish             |
+|   12   | Czech               |
+|   13   | Hungarian           |
+|   14   | Polish              |
+|   15   | Romanian            |
+|   16   | Croatian            |
+|   17   | Slovak              |
+|   18   | Slovenian           |
+|   19   | Greek               |
+|   20   | Bulgarian           |
+|   21   | Russian             |
+|   22   | Turkish             |
+|   23   | British English     |
+|   24   | Estonian            |
+|   25   | Latvian             |
+|   26   | Lithuanian          |
+|   27   | Brazilian           |
+|   28   | Traditional Chinese |
+|   29   | Korean              |
+|   30   | Simplified Chinese  |
+|   31   | Arabic              |
+|   32   | Thai                |
+|   33   | Bokmål              |
+
+--or in graphical interface of SMSS
