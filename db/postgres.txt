@@ -21,3 +21,7 @@ pg_dump -U user -Fc -Z1 -v -f /bak/bak.dmp basename 2>/bak/bak.log
 psql -U user -h dbhostname -d basename -f C:\dumpfile.dmp
 //if tar or catalog format
 pg_restore ..
+
+
+//кто подключен к серверу
+SELECT * FROM pg_stat_activity;
