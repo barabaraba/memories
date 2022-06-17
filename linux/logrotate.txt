@@ -1,0 +1,25 @@
+#проверить конфигурацию
+logrotate -d /path/to/logrotate/config
+
+#посмотреть когда применялась ротация
+#тут можно поменять дату чтобы применить ротацию вручную
+cat /var/lib/logrotate/status
+
+#запустить ротацию
+logrotate /path/to/logrotate/config
+
+#запустить ротацию принудительно без проверки дат
+logrotate -f /path/to/logrotate/config
+
+#пример конфигурации
+/var/log/syslogdb/*.log #можно ротировать вложенные логи
+/var/log/syslogdb/*/*.log
+{
+        daily #ежедневно
+        rotate 90 #сколько хранить дней
+#       size 50M #можно ротировать по размеру
+        compress #архивировать
+        postrotate
+                /usr/lib/rsyslog/rsyslog-rotate
+        endscript
+}
