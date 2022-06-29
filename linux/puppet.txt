@@ -1,0 +1,2 @@
+#run agent with debug info
+puppet agent -t --verbose --debug
