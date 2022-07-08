@@ -1,0 +1,5 @@
+#тут норм сработало 1 вариант.
+https://kb.vmware.com/s/article/2145603
+
+#на всякий случай
+https://be-virtual.net/vcsa-6-7-out-of-space-seat/
