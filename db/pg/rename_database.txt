@@ -1,1 +1,2 @@
+#if no active sessions
 ALTER DATABASE name1 RENAME TO name2;
