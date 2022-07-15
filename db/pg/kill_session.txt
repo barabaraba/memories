@@ -1,0 +1,5 @@
+SELECT * FROM pg_stat_activity WHERE state = 'active';
+--отменить текущий запрос
+SELECT pg_cancel_backend(<pid of the process>) 
+--убить сессию
+SELECT pg_terminate_backend(<pid of the process>) 
