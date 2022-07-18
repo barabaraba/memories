@@ -1,0 +1,18 @@
+#put mib file here
+/usr/share/snmp/mibs
+
+#put here
+nano /etc/snmp/snmp.conf
+mibs +MYMIB1-MIB:MYMIB2-MIB
+
+#run command
+download-mibs
+
+#restart snmpd
+/etc/init.d/snmpd restart
+
+#restart zabbix
+systemctl restart zabbix-server
+
+#check new mib
+snmpwalk -v1 -c public 192.168.1.1 DEV1-MIB::addr1
